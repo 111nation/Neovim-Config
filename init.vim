@@ -45,6 +45,11 @@ set showbreak=...
 nnoremap <C-Right> w     " Move forward by word with Ctrl+Right
 nnoremap <C-Left> b      " Move backward by word with Ctrl+Left
 
+" Undo
+nnoremap <C-z> u
+inoremap <C-z> <C-o>u
+vnoremap <C-z> u
+
 nnoremap <Down> gj
 nnoremap <Up> gk
 nnoremap j gj
@@ -87,10 +92,11 @@ call plug#begin()
 	Plug 'nvim-tree/nvim-web-devicons' 
 call plug#end()
 
+
 inoremap <silent><expr> <CR> pumvisible() ? coc#_select_confirm() : "\<CR>"
 "Catpuccin
 set background=dark
-colorscheme catppuccin-mocha
+colorscheme catppuccin-macchiato
 
 " Set the background to transparent
 autocmd VimEnter * hi Normal guibg=NONE ctermbg=NONE
